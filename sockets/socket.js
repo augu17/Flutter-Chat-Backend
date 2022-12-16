@@ -20,14 +20,13 @@ io.on('connection', (client) => {
     client.join(uid);
 
     //Escuchar del cliente el msg personal
-    client.on('personal-msg', (payload) => {
+    client.on('personal-msg', async(payload) => {
 
-        addMessage(payload);
-        io.to(payload.for).emit('personal-msg', payload);
+        await addMessage(payload);
+        io.to(payload.to).emit('personal-msg', payload);
     })
 
     client.on('disconnect', () => {
-        console.log('Cliente desconectado');
         disconnectedUser(uid);
     });
 

@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 
 const MessageSchema = Schema({
-    for: {
+    from: {
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true
