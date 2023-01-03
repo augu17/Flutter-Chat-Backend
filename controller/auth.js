@@ -114,4 +114,4 @@ const deleteToken = async (req, res = response) => {
     })
 }
 
-module.exports = { newUser, login, deleteToken };
+module.exports = { newUser, login, renewToken, deleteToken };
