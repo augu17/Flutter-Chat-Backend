@@ -23,5 +23,6 @@ router.post('/', [
 ], login);
 
 router.get('/renew', validateJWT, renewToken);
+router.get('/delete', validateJWT, deleteToken);
 
 module.exports = router;

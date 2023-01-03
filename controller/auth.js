@@ -101,4 +101,17 @@ const renewToken = async (req, res = response) => {
     })
 }
 
-module.exports = { newUser, login, renewToken };
+const deleteToken = async (req, res = response) => {
+
+    const uid = req.uid;
+    const token = '';
+    const user = await User.findById(uid);
+
+    res.json({
+        ok: true,
+        user,
+        token
+    })
+}
+
+module.exports = { newUser, login, deleteToken };
